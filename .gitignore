@@ -1,0 +1,42 @@
+# AI StudyMate
+
+## Ignore environment files (contain secrets)
+.env
+
+## Python virtual environment
+.venv/
+venv/
+env/
+
+## Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+## Node modules
+node_modules/
+
+## Vite build output
+dist/
+build/
+
+## Logs
+*.log
+npm-debug.log*
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+## Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+

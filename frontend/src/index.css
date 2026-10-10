@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    @apply bg-slate-900 text-slate-100 font-sans;
+    margin: 0;
+    padding: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 
+           text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 
+           disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-blue-500/25
+           active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-slate-700 hover:bg-slate-600 text-slate-200 font-medium py-2 px-4 rounded-lg 
+           transition-all duration-200 border border-slate-600 hover:border-slate-500
+           active:scale-95;
+  }
+
+  .input-field {
+    @apply w-full bg-slate-700/50 border border-slate-600 rounded-xl px-4 py-3 text-slate-100 
+           placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-2 
+           focus:ring-blue-500/20 transition-all duration-200;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 
+           text-slate-400 hover:text-slate-100 hover:bg-slate-700/50 cursor-pointer;
+  }
+
+  .nav-item.active {
+    @apply bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-400 
+           border border-blue-500/30;
+  }
+
+  .prose-studymate h1 {
+    @apply text-2xl font-bold text-blue-400 mb-4 mt-6 first:mt-0;
+  }
+  .prose-studymate h2 {
+    @apply text-xl font-semibold text-purple-400 mb-3 mt-5;
+  }
+  .prose-studymate h3 {
+    @apply text-lg font-semibold text-cyan-400 mb-2 mt-4;
+  }
+  .prose-studymate p {
+    @apply text-slate-300 mb-3 leading-relaxed;
+  }
+  .prose-studymate ul, .prose-studymate ol {
+    @apply ml-5 mb-4 space-y-1;
+  }
+  .prose-studymate li {
+    @apply text-slate-300;
+  }
+  .prose-studymate ul li {
+    @apply list-disc;
+  }
+  .prose-studymate ol li {
+    @apply list-decimal;
+  }
+  .prose-studymate strong {
+    @apply text-blue-300 font-semibold;
+  }
+  .prose-studymate code {
+    @apply bg-slate-700 text-cyan-300 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+  .prose-studymate pre {
+    @apply bg-slate-900 border border-slate-700 rounded-xl p-4 overflow-x-auto mb-4;
+  }
+  .prose-studymate pre code {
+    @apply bg-transparent p-0;
+  }
+  .prose-studymate blockquote {
+    @apply border-l-4 border-blue-500 pl-4 italic text-slate-400 mb-4;
+  }
+}
+
+/* Animated gradient background */
+.gradient-bg {
+  background: linear-gradient(135deg, #0f172a 0%, #0d1426 50%, #0f172a 100%);
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Mobile sidebar overlay */
+.sidebar-overlay {
+  @apply fixed inset-0 bg-black/60 z-40 lg:hidden;
+  backdrop-filter: blur(4px);
+}
+
